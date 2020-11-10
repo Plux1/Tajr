@@ -1,5 +1,6 @@
 from django.urls import path
 from django.views.generic import TemplateView
+from main import views
 
 # Make sure to name your urls so that they can be easly referenced
 # Naming url path provide a single point of modification if we ever want to change the urls
@@ -7,6 +8,7 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     path('', TemplateView.as_view(template_name="home.html"), name='home'),
-    path('about/', TemplateView.as_view(template_name='about_us.html'), name='about')
+    path('about/', TemplateView.as_view(template_name='about_us.html'), name='about'),
+    path('contact/', views.ContactUsView.as_view(), name='contact')
 ]
 
