@@ -2,7 +2,7 @@ from django import forms
 from django.core.mail import send_mail
 
 class ContactForm(forms.Form):
-    name = forms.Charfield(label='Your name', max_length=100)
+    name = forms.CharField(label='Your name', max_length=100)
     message = forms.CharField(max_length=600, widget=forms.Textarea )
 
     # Method to send emails
